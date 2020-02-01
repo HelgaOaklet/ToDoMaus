@@ -5,9 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: cornflowerblue;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.custom-avatar, .custom-avatar img {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.cardStyle {
+  padding: 15px;
+}
+
+.addTodoContainer {
+  margin-bottom: 30px;
 }
