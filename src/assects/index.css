@@ -18,10 +18,35 @@ code {
   height: 100px !important;
 }
 
+.footerStyle {
+  bottom: 0;
+  top: auto !important;
+  text-align: center;
+  padding: 20px;
+  height: 70px;
+}
+
 .cardStyle {
   padding: 15px;
 }
 
 .addTodoContainer {
   margin-bottom: 30px;
+}
+
+.mainContainer {
+  margin-bottom: 85px;
+}
+
+.todo {
+  border: 5px ridge;
+  background: #83e5ce;
+  padding: 5px;
+  margin: 5px;
+  box-Shadow: 0 0 10px #15a14d;
+  display: flex;
+  align-item: center;
+  justify-Content: center;
+  word-wrap: break-word;
+  text-align: justify;
 }

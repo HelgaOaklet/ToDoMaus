@@ -4,8 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
 import Avatar from "@material-ui/core/Avatar";
 import avatar from '../assects/Avatar.jpg';
-//import avatar from './AvatarNew';
-//import { makeStyles} from "@material-ui/core/styles";
 
 function HeaderComponent() {
     return (
@@ -20,7 +18,7 @@ function HeaderComponent() {
                          }}
                     >
                         <Typography variant="h2">
-                            Todo aplication
+                            Todo application
                         </Typography>
                         <Typography variant="subtitle2"
                                     align='right'

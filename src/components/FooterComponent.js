@@ -2,23 +2,17 @@
 import Grid from "@material-ui/core/Grid";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from '@material-ui/core/Typography';
-import { makeStyles} from "@material-ui/core/styles";
 
-
-const useStyles = makeStyles(theme => ({
-    appBar: {
-        top: 'auto',
-        //width: 100px,
-        bottom:0,
-    },
-}));
 
 function FooterComponent() {
-
-    const classes = useStyles();
-
     return (
-        <AppBar position="fixed" color="primary" className={classes.appBar}>
+        <AppBar position="fixed"
+                color="primary"
+                classes={{
+                    root: 'footerStyle'
+                }}
+        >
+            <div className="footer">
             <Grid container>
                 <Grid item
                       xs={3}
@@ -49,8 +43,7 @@ function FooterComponent() {
                     </Typography>
                 </Grid>
             </Grid>
-
-
+            </div>
         </AppBar>
     );
 }
