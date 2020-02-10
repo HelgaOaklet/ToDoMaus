@@ -50,3 +50,12 @@ code {
   word-wrap: break-word;
   text-align: justify;
 }
+
+.todo div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todoInput, .todoTitle {
+  width: 250px;
+}

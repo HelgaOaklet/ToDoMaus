@@ -4,7 +4,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Delete from "@material-ui/icons/Delete";
 import TextField from "@material-ui/core/TextField";
 import Save from "@material-ui/icons/Save";
-
+import Button from "@material-ui/core/Button";
 
 class TodoComponent extends React.Component {
     constructor(props) {
@@ -55,18 +55,19 @@ class TodoComponent extends React.Component {
 
 
     render() {
-        const {todo, deleteTodoById} = this.props;
+        const {todo, deleteTodoById, onOpenModal} = this.props;
         return (
             <div className="todo"
             >
                 <Checkbox value={todo.status === 'DONE'}
                           onChange={this.onChangeCheckbox}
+                          disabled={this.state.isEdit}
                 />
                 {this.state.isEdit
                     ? (
                         <div>
-                        <TextField value={this.state.todoTitle}
-                                   onChange={this.onChangeOldTitle}
+                            <TextField value={this.state.todoTitle}
+                                       onChange={this.onChangeOldTitle}
                         />
                             <IconButton onClick={this.onUpdateTitle}>
                                 <Save />
@@ -75,16 +76,25 @@ class TodoComponent extends React.Component {
                         </div>
                     )
                     : (
-                        <div onClick={this.onTitleClick}>
-                            {todo.title}
-                        </div>
+                        <>
+                            <div onClick={this.onTitleClick}
+                                 className="todoTitle"
+                            >
+                                {todo.title}
+                            </div>
+                            <Button onClick={() => onOpenModal(todo.id)}>
+                                Show more
+                            </Button>   
+                        </> 
                     )
                 }
-                 <IconButton onClick={() => deleteTodoById(todo.id)}>
+                 <IconButton onClick={() => deleteTodoById(todo.id)}
+                             disabled={this.state.isEdit}
+                 >
                     <Delete />
                  </IconButton>
             </div>
-        )
+        );
     }
 }
 
