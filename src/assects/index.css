@@ -39,16 +39,16 @@ code {
 }
 
 .todo {
-  border: 5px ridge;
-  background: #83e5ce;
-  padding: 5px;
-  margin: 5px;
-  box-Shadow: 0 0 10px #15a14d;
   display: flex;
-  align-item: center;
-  justify-Content: center;
+  background: #83e5ce;
+  border: 5px ridge;
+  padding: 5px;  
+  box-Shadow: 0 0 10px #15a14d; 
+  justify-content: center;
+  align-items: center;
   word-wrap: break-word;
   text-align: justify;
+  margin: 5px;
 }
 
 .todo div {
@@ -57,5 +57,11 @@ code {
 }
 
 .todoInput, .todoTitle {
-  width: 250px;
+  width: 500px;
+}
+
+.modalTitle h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

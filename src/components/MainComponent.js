@@ -5,9 +5,6 @@ import TodoListContainer from "./todo/TodoListContainer";
 import AddTodoComponent from "./todo/AddTodoComponent";
 import TodoModal from "./todo/TodoModal";
 
-const generateIdByTitle = () =>
-    ('_' + Math.random().toString(36).substr(2,9));
-
 class MainComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -41,7 +38,6 @@ class MainComponent extends React.Component {
         })
             .then((response) => response.json())
             .then(todos => {
-                console.log(todos);
                 this.setState({
                     todoList: todos
                 });
@@ -94,7 +90,6 @@ class MainComponent extends React.Component {
     }
 
     render() {
-        console.log(this.state.todoList);
         return (
             <>
                 <Grid container
@@ -123,6 +118,7 @@ class MainComponent extends React.Component {
                 {!!this.state.isOpenModal && (
                     <TodoModal onCloseModal={this.onCloseModal}
                                todoId={this.state.isOpenModal} 
+                               loadTodos={this.loadTodos}
                     />
                 )}
             </>    
